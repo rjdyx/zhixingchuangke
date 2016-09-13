@@ -7,6 +7,7 @@ body {
 	background-color: #51b6db;
 	background-repeat: no-repeat;
 	font-family: "微软雅黑"
+    font-size: 16px;
 }
 
 .content {
@@ -135,7 +136,7 @@ body {
 
 @keyframes starshrine {
 	0% {transform: scale(1,1);}
-	50% {transform: scale(1.5,1.5);}
+	50% {transform: scale(0.5,0.5);}
 	100% {transform: scale(1,1);}
 }
 
@@ -224,18 +225,16 @@ body {
 /* fly */
 #fly {
 	position: relative;
-    top: 3rem;
-    left: 11rem;
-    animation: flyFlow 2s linear infinite;
+    top: 12rem;
+    left: 24rem;
+    z-index: -1;
+    /*animation: flyFlow 1s linear 1s;*/
     /*transform: translate(10px,10px);*/
 }
 
 @keyframes flyFlow {
-	0% {transform: translate(20px,20px);}
-	25% {transform: translate(10px,10px);}
-	50% {transform: translate(0px,0px);}
-	75% {transform: translate(0px,10px);}
-	100% {transform: translate(20px,20px);}
+	0% {top: 12rem;left: 24rem;transform: scale(1,1);}
+	100% {top: 3rem;left: 9rem;transform: scale(0,0);}
 }
 
 /* city */
@@ -266,8 +265,9 @@ body {
     top: -1rem;
     left: 7rem;
     width: 11.5rem;
-    line-height: 2;
+    line-height: 2rem;
     color: white;
+    font-size: 1.1rem;
 }
 
 .job p:first-child {
@@ -331,7 +331,7 @@ body {
 
 #city3 {
     top: 23.5rem;
-    left: 40rem;
+    left: 40.3rem;
 }
 
 #city3 .city {
@@ -396,23 +396,27 @@ body {
 
 @keyframes flagDown {
     0% {transform: rotate(-49deg);}
+    10% {transform: rotate(-59deg);}
     50% {transform: rotate(-10deg);}
     60% {transform: rotate(10deg);}
-    70% {transform: rotate(-5deg);}
-    90% {transform: rotate(5deg);}
+    70% {transform: rotate(-3deg);}
+    90% {transform: rotate(2deg);}
     100% {transform: rotate(0deg);}
 }
 
 /* gain */
 
 #gain {
-
+    position: absolute;
+    perspective: 800px;
+    perspective-origin: 10% 1100px;
 }
+
 
 .gain-title {
 	width: 7rem;
 	color: #51b6db;
-	font-size: 14px;
+	font-size: 0.9rem;
 	text-align: center;
     font-weight: bold;
 }
@@ -420,8 +424,8 @@ body {
 .gain-content {
 	width: 7rem;
 	color: white;
-	line-height: 20px;
-    font-size: 13px;
+    line-height: 1.5rem;
+    font-size: 0.8rem;
 }
 
 #gain-flag {
@@ -431,28 +435,25 @@ body {
 }
 
 #gain1, #gain2, #gain3, #gain4 {
- 	width: 10rem;
-	transform-style: preserve-3d;
-	transform-origin: bottom; 
+    width: 17rem;
+    height: 19rem;
  }
 
 #gain1 {
 	position: absolute;
 	top: 85.5rem;
-    left: 33rem;
-    width: 17rem;
-    height: 19rem;
+    left: 39rem;
     background-image: url(../images/gainleft.png);
     background-repeat: no-repeat;
+    transform-style: preserve-3d;
+    transform-origin: right;
 }
 
 
 #gain2 {
 	position: absolute;
     top: 85.5rem;
-    left: 5rem;
-    width: 17rem;
-    height: 19rem;
+    left: 10.5rem;
     background-image: url(../images/gainleft.png);
     background-repeat: no-repeat;
 }
@@ -461,8 +462,6 @@ body {
 	position: absolute;
     top: 102.8rem;
     left: 14rem;
-    width: 17rem;
-    height: 19rem;
     background-image: url(../images/gainRight.png);
     background-repeat: no-repeat;
 }
@@ -471,8 +470,6 @@ body {
 	position: absolute;
     top: 102.8rem;
     left: 42rem;
-    width: 17rem;
-    height: 19rem;
     background-image: url(../images/gainRight.png);
     background-repeat: no-repeat;
 }
@@ -481,14 +478,14 @@ body {
 #gain1 p {
     position: relative;
     top: 1.5rem;
-    left: 9rem;
+    left: 3rem;
 }
 
 
 #gain2 p {
     position: relative;
     top: 1.5rem;
-    left: 9rem;
+    left: 3rem;
 }
 
 
@@ -505,105 +502,71 @@ body {
     left: 1rem;
 }
 
-/* feet */
-
-#left-foot0 ,#right-foot0,
-#left-foot1 ,#right-foot1,
-#left-foot2 ,#right-foot2,
-#left-foot4 ,#right-foot4,
-#left-foot5 ,#right-foot5,
-#right-foot6 {
-	position: absolute;
-	display: none;
-	opacity: 0.5;
+#img-leftRow1, #img-leftRow2 {
+    position: absolute;
+    top: 2rem;
+    left: -6.2rem;
+    transform-style: preserve-3d;
+    transform-origin: right;
 }
 
-#left-foot3 ,#right-foot3 {
-	position: absolute;
-	display: none;
-	opacity: 0.5;
+#img-leftRow1 {
+    transform: rotateY(-129deg);
 }
 
-#left-foot0 ,#right-foot0 {
-	left: 47rem;
+#img-leftRow2 {
+    transform: rotateY(-105deg);
+    z-index: -1;
 }
 
-#left-foot1 ,#right-foot1 {
-	left: 30rem;
+
+#img-rightRow1, #img-rightRow2 {
+    position: absolute;
+    top: 2rem;
+    left: 10.5rem;
+    transform-style: preserve-3d;
+    transform-origin: left;
 }
 
-#left-foot2 ,#right-foot2 {
-	left: 13rem;
+#img-rightRow1 {
+    transform: rotateY(64deg);
 }
 
-#left-foot3 ,#right-foot3 {
-	top: 108rem;
+#img-rightRow2 {
+    transform: rotateY(44.2deg);
+    z-index: -1;
 }
 
-#left-foot4 ,#right-foot4 {
-	left: 13rem;
+@keyframes leftRowShow1 {
+    0% {transform: rotateY(-129deg);}
+    70% {transform: rotateY(10deg);}
+    80% {transform: rotateY(0deg);}
+    90% {transform: rotateY(5deg);}
+    100% {transform: rotateY(0deg);}
 }
 
-#left-foot5 ,#right-foot5 {
-	left: 30rem;
+@keyframes leftRowShow2 {
+    0% {transform: rotateY(-105deg);}
+    70% {transform: rotateY(10deg);}
+    80% {transform: rotateY(0deg);}
+    90% {transform: rotateY(5deg);}
+    100% {transform: rotateY(0deg);}
 }
 
-#right-foot6 {
-	left: 42rem;
+@keyframes rightRowShow1 {
+    0% {transform: rotateY(64deg);}
+    70% {transform: rotateY(-10deg);}
+    80% {transform: rotateY(0deg);}
+    90% {transform: rotateY(-5deg);}
+    100% {transform: rotateY(0deg);}
 }
 
-#left-foot0, #left-foot1, #left-foot2 {
-	top: 101rem;
-}
-
-#left-foot0 img, #left-foot1 img, #left-foot2 img {
-    transform: rotate(-90deg);
-    width: 4rem;
-}
-
-#right-foot0, #right-foot1, #right-foot2 {
-	top: 97.5rem;
-}
-
-#right-foot0 img, #right-foot1 img, #right-foot2 img {
-	transform: rotate(-90deg);
-    width: 4rem;
-}
-
-#left-foot3 {
-	left: 7rem;
-}
-
-#left-foot3 img {
-	transform: rotate(180deg);
-    width: 4rem;
-}
-
-#right-foot3 {
-	left: 3.5rem;
-}
-
-#right-foot3 img {
-	transform: rotate(180deg);
-    width: 4rem;
-}
-
-#left-foot4, #left-foot5 {
-	top: 114.5rem;
-}
-
-#left-foot4 img, #left-foot5 img {
-	transform: rotate(90deg);
-    width: 4rem;
-}
-
-#right-foot4, #right-foot5, #right-foot6 {
-	top: 118rem;
-}
-
-#right-foot4 img, #right-foot5 img, #right-foot6 img {
-	transform: rotate(90deg);
-    width: 4rem;
+@keyframes rightRowShow2 {
+    0% {transform: rotateY(44.2deg);}
+    70% {transform: rotateY(-10deg);}
+    80% {transform: rotateY(0deg);}
+    90% {transform: rotateY(-5deg);}
+    100% {transform: rotateY(0deg);}
 }
 
 
@@ -742,23 +705,19 @@ body {
     left: 3rem;
     top: 0.5rem;
     color: white;
-    margin: 10px 4px;
-    font-size: 14px;
+    margin: 1rem 0.3rem;
+    font-size: 0.9rem;
 }
 
-#img-flag-flow1 p:last-child {
-    font-size: 1px;
-}
 
 #img-flag-flow1 p span {
-	display: inline-block;
     position: absolute;
     right: 3.8rem;
     width: 3.7rem;
-    padding: 3px;
+    padding: 0.2rem;
     background-color: white;
     color: #ef624c;
-    border-radius: 4px;
+    border-radius: 0.2rem;
 }
 
 #download {
@@ -776,8 +735,8 @@ body {
     left: 6rem;
     top: 2rem;
     color: white;
-    margin: 7px 4px;
-    font-size: 23px;
+    margin: 0.5rem;
+    font-size: 1.5rem;
 }
 
 #img-flag-flow3 {
@@ -787,9 +746,9 @@ body {
 }
 
 #img-flag-flow3 p {
-    margin-left: 45px;
-    margin-top: 34px;
-    font-size: 21px;
+    margin-left: 2.3rem;
+    margin-top: 2.2rem;
+    font-size: 1.5rem;
     color: white;
 }
 
@@ -800,8 +759,8 @@ body {
 }
 
 #img-flag-flow4 p {
-    margin: 12px;
-    font-size: 14px;
+    margin: 0.8rem;
+    font-size: 0.9rem;
     color: white;
 }
 
@@ -812,9 +771,9 @@ body {
 }
 
 #img-flag-flow5 p {
-    margin-left: 45px;
-    margin-top: 34px;
-    font-size: 21px;
+    margin-left: 2.3rem;
+    margin-top: 2.2rem;
+    font-size: 1.5rem;
     color: white;
 }
 
@@ -861,16 +820,16 @@ body {
     position: relative;
     left: -4.3rem;
     top: 4rem;
-    margin: 3px;
-    font-size: 14px;
+    margin: 0.3rem;
+    font-size: 0.9rem;
     text-align: center;
     color: white;
 }
 
 #contact-email {
-    margin-top: 9px;
+    margin-top: 1rem;
 }
 
 #contact-address {
-    margin-top: 7px;
+    margin-top: 0.6rem;
 }

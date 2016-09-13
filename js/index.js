@@ -33,8 +33,11 @@ $(function() {
 			});
 			$("#city3 div.city").css({
 				display:"block",
-				animation: "up 0.6s cubic-bezier(0.68, 0.03, 0.99, 1) 0.2s",
+				animation: "up 0.6s cubic-bezier(0.68, 0.03, 0.99, 1) 0.7s",
 				'animation-fill-mode': 'forwards'
+			});
+			$("#fly").css({
+				animation: "flyFlow 1s linear 1.5s"
 			});
 		}
 
@@ -45,7 +48,7 @@ $(function() {
 				'animation-fill-mode': 'forwards'
 			});
 			$("#city4 .city .job").css({
-				animation: "flagDown 0.6s cubic-bezier(0.68, 0.03, 0.99, 1) 0.6s",
+				animation: "flagDown 0.6s cubic-bezier(0.68, 0.03, 0.99, 1) 0.68s",
     			"animation-fill-mode": "forwards"
 			});
 		}
@@ -59,7 +62,22 @@ $(function() {
 		}
 
 		if(bodyHeight>gainFlag && 1.0*gainFlag/bodyHeight < 0.3){
-			beginFootAnimate = 1
+			$("#img-leftRow1").css({
+				animation: "leftRowShow1 0.6s cubic-bezier(0.02, 0.8, 1, 1)",
+				'animation-fill-mode': 'forwards'
+			});
+			$("#img-leftRow2").css({
+				animation: "leftRowShow2 0.6s cubic-bezier(0.02, 0.8, 1, 1) 0.6s",
+				'animation-fill-mode': 'forwards'
+			});
+			$("#img-rightRow1").css({
+				animation: "rightRowShow1 0.6s cubic-bezier(0.02, 0.8, 1, 1) 1.2s",
+				'animation-fill-mode': 'forwards'
+			});
+			$("#img-rightRow2").css({
+				animation: "rightRowShow2 0.6s cubic-bezier(0.02, 0.8, 1, 1) 1.8s",
+				'animation-fill-mode': 'forwards'
+			});
 		}
 
 		if(bodyHeight>imgNew && 1.0*imgNew/bodyHeight < 0.3){
@@ -91,7 +109,6 @@ $(function() {
 	
 })
 
-var beginFootAnimate = 0;
 var leftFoot = [0,0,0,0,0,0,0];	//左脚印数组
 var rightFoot = [0,0,0,0,0,0,0];	//右脚印数组
 var indexFoot = 0;
@@ -124,7 +141,7 @@ function starShine(){
 		if(star[i] == 0){
 			$("#img-star"+i).css('animation','');
 		}else {
-			$("#img-star"+i).css('animation','starLit 3s linear alternate');
+			$("#img-star"+i).css('animation','starshrine 0.3s linear alternate');
 		}
 	}
 }
@@ -142,56 +159,56 @@ function randomStar(){
 }
 
 //动态修复两个foot数组
-function synFoot() {
-		if(indexFoot <=6){
-			if(indexFoot%2 == 0){
-				rightFoot[indexFoot] = 1;
-			}else {
-				leftFoot[indexFoot] = 1;
-			}
-		}
-		// else {
-		// 	if(indexFoot%2 == 0){
-		// 		rightFoot[indexFoot%6] = 0;
-		// 	}else {
-		// 		leftFoot[indexFoot%6] = 0;
-		// 	}
-		// }
+// function synFoot() {
+// 		if(indexFoot <=6){
+// 			if(indexFoot%2 == 0){
+// 				rightFoot[indexFoot] = 1;
+// 			}else {
+// 				leftFoot[indexFoot] = 1;
+// 			}
+// 		}
+// 		// else {
+// 		// 	if(indexFoot%2 == 0){
+// 		// 		rightFoot[indexFoot%6] = 0;
+// 		// 	}else {
+// 		// 		leftFoot[indexFoot%6] = 0;
+// 		// 	}
+// 		// }
 	
-	indexFoot++;
-	// if(indexFoot == 12){
-	// 	indexFoot = 0;
-	// }
-}
+// 	indexFoot++;
+// 	// if(indexFoot == 12){
+// 	// 	indexFoot = 0;
+// 	// }
+// }
 
 //画脚步
-function drawFeet() {
-	synFoot();
-	for(i = 0; i < 7 ; i++){
-		if(leftFoot[i] == 0) {
-			$("#left-foot"+i).css("display","none");
-		}else {
-			$("#left-foot"+i).css("display","block");
-		}
-		if(rightFoot[i] == 0) {
-			$("#right-foot"+i).css("display","none");
-		}else {
-			$("#right-foot"+i).css("display","block");
-		}
-	}
-}
+// function drawFeet() {
+// 	synFoot();
+// 	for(i = 0; i < 7 ; i++){
+// 		if(leftFoot[i] == 0) {
+// 			$("#left-foot"+i).css("display","none");
+// 		}else {
+// 			$("#left-foot"+i).css("display","block");
+// 		}
+// 		if(rightFoot[i] == 0) {
+// 			$("#right-foot"+i).css("display","none");
+// 		}else {
+// 			$("#right-foot"+i).css("display","block");
+// 		}
+// 	}
+// }
 
 //动画绘制
 function drawAnimate(){
-	if(delay == 0){
+	// if(delay == 0){
 		starShine();
-	}
-	delay++;
-	if(delay == 4){
-		delay = 0;
-	}
+	// }
+	// delay++;
+	// if(delay == 4){
+	// 	delay = 0;
+	// }
 
-	if(beginFootAnimate == 1 && indexFoot < 7){
-		drawFeet();
-	}
+	// if(beginFootAnimate == 1 && indexFoot < 7){
+	// 	drawFeet();
+	// }
 }
