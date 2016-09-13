@@ -36,9 +36,6 @@ $(function() {
 				animation: "up 0.6s cubic-bezier(0.68, 0.03, 0.99, 1) 0.7s",
 				'animation-fill-mode': 'forwards'
 			});
-			$("#fly").css({
-				animation: "flyFlow 1s linear 1.5s"
-			});
 		}
 
 		if(bodyHeight>city4Offset && 1.0*city4Offset/bodyHeight < 0.5){
@@ -141,7 +138,7 @@ function starShine(){
 		if(star[i] == 0){
 			$("#img-star"+i).css('animation','');
 		}else {
-			$("#img-star"+i).css('animation','starshrine 0.3s linear alternate');
+			$("#img-star"+i).css('animation','starLit 2s linear alternate');
 		}
 	}
 }
@@ -200,13 +197,13 @@ function randomStar(){
 
 //动画绘制
 function drawAnimate(){
-	// if(delay == 0){
+	if(delay == 0){
 		starShine();
-	// }
-	// delay++;
-	// if(delay == 4){
-	// 	delay = 0;
-	// }
+	}
+	delay++;
+	if(delay == 4){
+		delay = 0;
+	}
 
 	// if(beginFootAnimate == 1 && indexFoot < 7){
 	// 	drawFeet();
